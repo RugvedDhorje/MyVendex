@@ -1,8 +1,10 @@
-const ServiveCard = ({url, text, buttonText, height}: {url: string, text: string, buttonText: string, height: string}) => {
+import { StaticImageData } from "next/image";
+
+const ServiveCard = ({url, text, buttonText, height,image}: {url: string, text: string, buttonText: string, height: string,  image: StaticImageData}) => {
     return (
         <div
             className="relative w-full rounded-lg bg-cover bg-center flex items-center justify-center"
-            style={{ backgroundImage: `url(${url})`, height: height }}
+            style={{ backgroundImage: `url(${image ? image.src : url})`, height: height }}
         >
             <div className="absolute inset-0 bg-black rounded-lg bg-opacity-50 flex items-center justify-center">
                 <div className='flex flex-col justify-between items-start w-full p-16'>

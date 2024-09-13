@@ -5,9 +5,17 @@ import CardCarousel from "@/components/Card/CardCarousel.jsx";
 import ImageCarousel from "@/components/Carousel/Carousel";
 import Navbar from "@/components/Navbar/Navbar";
 import SearchBox from "@/components/SearchBox/SearchBox";
-import ServiveCard from "@/components/ServiceCard/ServiceCard";
+import ServiveCard from "@/components/ServiceCard/ServiceCard"; 
+import servicecard_1 from "@/app/assets/ServiceCard_1.jpg";
+import servicecard_2 from "@/app/assets/ServiceCard_2.jpg";
+import Annual_Trade from "@/app/assets/Annual_Trade.jpg";
+import Footer_img from "@/app/assets/Footer_img.jpg";
+import Link from "next/link";
+
+
 
 export default function Home() {
+  
   const images = [
     "https://images.unsplash.com/photo-1579818277109-ad8de2e7cf80?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -46,14 +54,14 @@ export default function Home() {
       <div className="w-[90vw] mx-auto flex flex-col justify-center py-8">
         <div className="flex justify-between items-center">
           <h2 className="text-black text-3xl">{"Top Vendors"}</h2>
-          <h2 className="cursor-pointer">See All</h2>
+          <Link href="/card" className="cursor-pointer">See All</Link>
         </div>
         <div className="flex justify-center items-center w-full">
           <CardCarousel cards={cards} />
         </div>
       </div>
       <div className="w-[90vw] mx-auto flex flex-col justify-center py-8">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-4">
           <h2 className="text-black text-3xl">{"Services"}</h2>
           <h2 className="cursor-pointer">See All</h2>
         </div>
@@ -63,12 +71,14 @@ export default function Home() {
             text="Anything and Everything from Planning to Execution"
             buttonText="Explore"
             height="450px"
+            image = {servicecard_1}
           />
           <ServiveCard 
             url="https://images.unsplash.com/photo-1491378630646-3440efa57c3b?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             text="Looking to draw cutomers to your exhibition booth?"
             buttonText="Schedule a call"
             height="450px"
+            image = {servicecard_2}
           />
         </div>
       </div>
@@ -90,6 +100,7 @@ export default function Home() {
             text="Anything and Everything from Planning to Execution"
             buttonText="Explore"
             height="300px"
+            image = {Annual_Trade}
           />
         </div>
       </div>
@@ -99,6 +110,7 @@ export default function Home() {
           text="Know more about Constro India 2025"
           buttonText="Enroll now"
           height="400px"
+          image = {Footer_img}
         />
       </div>
     </main>
